@@ -22,5 +22,27 @@ router.get('/', async (req, res, next) => {
     }
   })
 
+  // POST a new student
+  router.post('/', async (req, res, next) => {
+    try {
+      const { name, major } = req.body
+      res.send(201)
+      res.json(await Student.create({ name, major }))
+    } catch (err) {
+      next(err)
+    }
+  })
+
+  // DELETE a student by id
+  router.delete('/:id', async (req, res, next) => {
+    try {
+      const student = await Student.findByPk(+req.params.id)
+      if (!student) res.sendStatus(404)
+      await student.destroy()
+      res.sendStatus(204)
+    } catch (err) {
+      next(err)
+    }
+  })
+
   module.exports = router
-  

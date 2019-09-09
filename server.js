@@ -23,6 +23,10 @@ app.use('/students', studentRoutes)
 // Serve the index.html file in ./public as a homepage
 app.use(express.static('public'))
 
+app.use('/', (req, res, next) => {
+  res.redirect('/colleges')
+})
+
 // If the environment has a PORT defined, use that (otherwise, default to 3030)
 const PORT = process.env.PORT || 3030
 
