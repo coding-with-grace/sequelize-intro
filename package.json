@@ -1,0 +1,21 @@
+{
+  "name": "sequelize-prac",
+  "version": "1.0.0",
+  "description": "- Sequelize is an Object-Relational Mapper (ORM) and can access SQL databases from Node.js - `npm install sequelize` - Sequelize will transform our JS to SQL, and pass it off to pg (PostgreSQL server), allowing node to talk to PostgreSQL - We DON'T have a Sequelize database. We have a PostgreSQL database. Sequelize is a transformer/interface that maps JS into SQL, and vice-versa",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "morgan": "^1.9.1",
+    "nodemon": "^1.19.2",
+    "pg": "^7.12.1",
+    "sequelize": "^5.18.4"
+  }
+}
