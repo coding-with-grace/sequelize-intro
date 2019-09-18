@@ -25,9 +25,17 @@ router.get('/', async (req, res, next) => {
   // POST a new college
   router.post('/', async (req, res, next) => {
     try {
+      // req.body is an object with keys of 'name' and 'city'
       const { name, city } = req.body
-      res.status(201)
+      res.status(201) // new POST request successfully made by the server
       res.json(await College.create({ name, city }))
+      /*
+        long-hand form of code above:
+        res.json(await College.create({
+          name: name,
+          city: city
+        }))
+      */
     } catch (err) {
       next(err)
     }
@@ -39,7 +47,7 @@ router.get('/', async (req, res, next) => {
       const college = await College.findByPk(+req.params.id)
       if (!college) res.sendStatus(404)
       await college.destroy()
-      res.sendStatus(204)
+      res.sendStatus(204) // DELETE request successfully made by server
     } catch (err) {
       next(err)
     }
