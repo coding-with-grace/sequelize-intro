@@ -1,11 +1,11 @@
 const express = require('express')
-const { Student } = require('../database')
+const { Student, College } = require('../database')
 const router = express.Router()
 
 // GET all students
 router.get('/', async (req, res, next) => {
     try {
-      res.json(await Student.findAll())
+      res.json(await Student.findAll({include: [{model: College}]}))
     } catch (err) {
       next(err)
     }
@@ -14,7 +14,7 @@ router.get('/', async (req, res, next) => {
   // GET a single student by id
   router.get('/:id', async (req, res, next) => {
     try {
-      const student = await Student.findByPk(+req.params.id)
+      const student = await Student.findByPk(+req.params.id, {include: [{model: College}]})
       if (!student) return res.sendStatus(404)
       res.json(student)
     } catch (err) {

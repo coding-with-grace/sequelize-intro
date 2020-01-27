@@ -22,7 +22,7 @@ const db = new Sequelize(
 /***** DEFINING DATABASE SCHEMA *****/
 
 const College = db.define('colleges', {
-  name: Sequelize.STRING,
+  college_name: Sequelize.TEXT,
   city: Sequelize.STRING,
 })
 

@@ -4,11 +4,11 @@ const { College, Student, db } = require('./database')
 
 const seedColleges = [
   {
-    name: 'Cornell',
+    college_name: 'Cornell',
     city: 'Ithaca',
   },
   {
-    name: 'Harvard',
+    college_name: 'Harvard',
     city: 'Cambridge',
   }
 ]
