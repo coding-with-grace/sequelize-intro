@@ -16,11 +16,13 @@ const seedColleges = [
 const seedStudents = [
   {
     name: 'Becky H',
-    major: 'Policies'
+    major: 'Policies',
+    collegeId: 1
   },
   {
     name: 'Samuel L',
-    major: 'Economics'
+    major: 'Economics',
+    collegeId: 2
   }
 ]
 
